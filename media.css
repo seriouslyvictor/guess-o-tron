@@ -1,0 +1,48 @@
+@media (max-width: 56.25rem) {
+    .wrapper {
+        min-width: unset;
+    }
+
+}
+
+@media (max-width: 43.75rem) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    header {
+        height: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .btn--mobile {
+        display: block;
+    }
+}
+
+@media (max-width: 37.5rem) {
+    body {
+        padding: .5rem;
+    }
+
+    .game--core {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: .875rem;
+    }
+
+}
