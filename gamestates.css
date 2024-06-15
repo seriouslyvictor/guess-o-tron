@@ -1,0 +1,23 @@
+/* Win State */
+
+.won .wrapper::after {
+    background: linear-gradient(var(--angulo), #f6ff00 0%, #00de16 100%);
+}
+
+.won .wrapper::before {
+    background: linear-gradient(var(--angulo), #f6ff00 0%, #00de16 100%);
+}
+
+
+/* Lost state */
+.lost h1 {
+    text-shadow: -4px 7px 20px #7b4397, -2px -3px 15px #dc2430;
+}
+
+.lost .wrapper::after {
+    background: linear-gradient(var(--angulo), #8438aa 0%, #e2c1c342);
+}
+
+.lost .wrapper::before {
+    background: linear-gradient(var(--angulo), #7b4397 0%, #dc2430);
+}
