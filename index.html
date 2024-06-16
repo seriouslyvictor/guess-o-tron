@@ -24,9 +24,9 @@
     <div class="wrapper">
         <header class="game--header">
             <aside>
-                <button class="regular btn--rules">Como jogar?</button>
-                <h2>BEST: <span class="num--best">0</span></h2>
-                <button class="regular btn--sobre">Sobre</button>
+                <button class="regular" id="btn--rules">Como jogar?</button>
+                <button class="regular" id="btn--reset">Reset</button>
+                <button class="regular" id="btn--sobre">Sobre</button>
             </aside>
             <button id="mobile--menu" class="btn--mobile"><i class="fa-solid fa-bars-staggered"></i></button>
         </header>
@@ -42,8 +42,8 @@
         <main class="game--core">
             <div class="num--atual"> </div>
             <section class="container--guess">
-                <button id="btn--alto" onclick="verificarAcerto('alto')">Mais alto</button>
-                <button id="btn--baixo" onclick="verificarAcerto('baixo')">Mais baixo</button>
+                <button id="btn--alto">Mais alto</button>
+                <button id="btn--baixo">Mais baixo</button>
             </section>
             <section class="game--control">
                 <button id="btn--start">Começar!</button>

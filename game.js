@@ -1,6 +1,6 @@
 let acertos = 0;
-let vitorias = 0;
-let derrotas = 0;
+let vitorias = localStorage.getItem("victories") || 0;
+let derrotas = localStorage.getItem("defeats") || 0;
 let jogoIniciado = false;
 let angulo = 0;
 let animationFrameId;
@@ -9,6 +9,7 @@ const randNum = document.querySelector(".num--atual");
 const startBtn = document.querySelector("#btn--start");
 const maisAlto = document.querySelector("#btn--alto");
 const maisBaixo = document.querySelector("#btn--baixo");
+const resetBtn = document.querySelector("#btn--reset");
 const scoreBoard = document.querySelector(".num--vit");
 const loserBoard = document.querySelector(".num--der");
 
@@ -55,6 +56,7 @@ function checarVitoria() {
     setTimeout(() => startAnimation(9), 1500);
     vitorias++;
     scoreBoard.textContent = vitorias;
+    localStorage.setItem("victories", vitorias);
     setTimeout(() => {
       resetarJogo();
     }, 5000);
@@ -66,6 +68,7 @@ function gameOver() {
   document.body.classList.add("lost");
   startAnimation(9);
   loserBoard.textContent = derrotas;
+  localStorage.setItem("defeats", derrotas);
   setTimeout(() => {
     resetarJogo();
   }, 3000);
@@ -104,5 +107,27 @@ function stopAnimation() {
     : (animationFrameId = null);
 }
 
+function loadBoards() {
+  scoreBoard.textContent = localStorage.getItem("victories") || 0;
+  loserBoard.textContent = localStorage.getItem("defeats") || 0;
+}
+
+function limparStorage() {
+  const resposta = prompt(
+    "Tem certeza que deseja limpar o placar? Digite Sim para confirmar"
+  );
+  resposta == "Sim" ? localStorage.clear() : "";
+  loadBoards();
+}
+
 startBtn.addEventListener("click", iniciarJogo);
+maisAlto.addEventListener("click", () => {
+  verificarAcerto("alto");
+});
+maisBaixo.addEventListener("click", () => {
+  verificarAcerto("baixo");
+});
+resetBtn.addEventListener("click", limparStorage);
+
 startAnimation(3);
+loadBoards();
