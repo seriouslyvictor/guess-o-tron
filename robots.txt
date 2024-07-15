@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://seriouslyvictor.github.io/guess-o-tron/sitemap.xml
